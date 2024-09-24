@@ -1,12 +1,26 @@
 let availableAmount = 5500;
 
-function donate(cardNumber){
+function donate(cardNumber , donationCause){
     const donationInput = document.getElementById(`donationInput${cardNumber}`);
     const donatedAmountByElement = document.getElementById(`donatedAmount${cardNumber}`);
 
-
+    
     const donationAmount = parseFloat(donationInput.value);
     const donatedAmount = parseFloat(donatedAmountByElement.textContent);
+
+    // history card
+
+    if(donationAmount && donationAmount > 0){
+        let currentTime = new Date().toLocaleString();
+        let donationHistory = document.getElementById('donation-history');
+
+        let newDonation = document.createElement('div');
+        newDonation.classList.add('mb-4');
+        newDonation.innerHTML = `<p><strong>${donationAmount} Taka</strong> is Donated for <strong>${donationCause}</strong></p>
+        <p>Date: ${currentTime}</p> `;
+
+        donationHistory.appendChild(newDonation);
+    }
 
 
 

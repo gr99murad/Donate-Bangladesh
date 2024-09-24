@@ -6,10 +6,11 @@ function donate(cardNumber){
 
 
     const donationAmount = parseFloat(donationInput.value);
-    const donatedAmount = parseFloat(donatedAmountByElement.textContent.split(' ')[0]);
+    const donatedAmount = parseFloat(donatedAmountByElement.textContent);
 
 
-    if(isNaN(donationAmount) || donationamount <= 0){
+
+    if(isNaN(donationAmount) || donationAmount <= 0){
         alert("Please enter valid donation amount");
         return;
     }
@@ -18,14 +19,30 @@ function donate(cardNumber){
         alert("Don't enough amount your account");
         return;
     }
-    donatedAmountByElement.textContent = `${donatedAmount + donationAmount} BDT`;
+    donatedAmountByElement.textContent = donatedAmount + donationAmount;
 
     availableAmount = availableAmount - donationAmount;
 
-    document.getElementById('availableAmount').textContent = `${availableAmount} BDT`;
+    document.getElementById('availableAmount').textContent = availableAmount.toFixed(2);
 
     donationInput.value = '';
+
+    showModal();
 }
+
+function showModal(){
+    const modal = document.getElementById('modal');
+    const dialog = document.getElementById('my_modal_5');
+    dialog.showModal();
+}
+
+const closeModal = document.getElementById('close-modal');
+closeModal.addEventListener('click',function(){
+    const dialog = document.getElementById('my_modal_5');
+    dialog.close();
+});
+
+
 
 const historyTab = document.getElementById('history-tab');
 
@@ -51,5 +68,5 @@ donationTab.addEventListener('click', function(){
 
     document.getElementById('donation-card').classList.remove('hidden');
     document.getElementById('history-card').classList.add('hidden');
-})
+});
 

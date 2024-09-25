@@ -21,14 +21,14 @@
 
 </head>
 <body class="lexend-font">
-    <header class="fixed top-0 z-10 w-full items-center bg-slate-200 ">
+    <header class="fixed top-0 z-10 w-full items-center bg-slate-200">
         <nav class="mb-5">
-            <div class="navbar bg-red-50">
+            <div class="navbar bg-red-50 p-6">
                 <div class="navbar-start">
                     <a href="blog.html" class="btn bg-[#B4F461]">Blog</a>
                 </div>
                 <div class="navbar-center">
-                  <a class="  text-xl md:flex md:flex-row md:gap-5"><img src="assets/logo.png" alt=""><span class="hidden md:block">Donate Bangladesh</span></a>
+                  <a class="  text-xl md:flex md:flex-row md:gap-5"><img class="lg:w-5 lg:h-5" src="assets/logo.png" alt=""><span class="hidden md:block font-extrabold">Donate Bangladesh</span></a>
                 </div>
                 <div class=" flex flex-row gap-2 navbar-end">
                     <img src="assets/coin.png" alt="">
@@ -37,7 +37,7 @@
               </div>
         </nav>
         
-        <div class="flex justify-center gap-5 p-6 ">
+        <div class="flex justify-center gap-5 p-6  ">
             <button id="donation-tab" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  bg-[#B4F461] text-gray-600">Donation</button>
             <button id="history-tab" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-gray-600">History</button>
         </div>
@@ -119,11 +119,13 @@
 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box flex flex-col gap-5 justify-center text-center">
         <h3 class="text-lg font-bold">Congrats!</h3>
+        <img class="w-10 h-10 mx-auto" src="assets/coin.png" alt="">
        <div>
         You have donated for humankind <br> <strong>Successfully</strong>
        </div>
        
-        <button id="close-modal" class="btn">Close Confirmation</button>
+       
+        <button id="close-modal" class="btn bg-[#B4F461]">Close Confirmation</button>
             
     </div></dialog>
 

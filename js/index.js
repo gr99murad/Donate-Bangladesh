@@ -9,7 +9,7 @@ function donate(cardNumber , donationCause){
     const donatedAmount = parseFloat(donatedAmountByElement.textContent);
 
     // donation history
-    if(donationAmount && donationAmount > 0){
+    if(donationAmount && donationAmount > 0 && donationAmount < availableAmount){
         let currentTime = new Date().toLocaleString();
         let donationHistory = document.getElementById('donation-history');
 
